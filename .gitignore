@@ -16,3 +16,4 @@ DerivedData/
 # Swift Package Manager 的缓存
 .swiftpm/
 .build/
+*.dmg
