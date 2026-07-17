@@ -1,0 +1,18 @@
+# macOS 系统自动生成的隐藏文件
+.DS_Store
+
+# 各类备份文件
+*.bak
+
+# Xcode 个人设置和缓存（每个人电脑上都不同，不需要共享）
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+
+# Xcode 编译产生的临时文件
+build/
+DerivedData/
+
+# Swift Package Manager 的缓存
+.swiftpm/
+.build/
