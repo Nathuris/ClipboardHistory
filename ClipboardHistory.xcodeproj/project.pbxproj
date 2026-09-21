@@ -19,7 +19,6 @@
 		5e309ce5eafe45d99b1cc5ea /* MenuBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7da19251fb1a41468c0d76ca /* MenuBarController.swift */; };
 		6c000685a2844c679d33d7a0 /* AppIconProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ac81393261024f639b92e5ce /* AppIconProvider.swift */; };
 		6dd530115e7546098c91e4f6 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = f3fea4b32ba64aa9846310e8 /* GeneralSettingsView.swift */; };
-		7660edc9656f41c084c31309 /* ImageResizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = b6afa00c473b4729b61a65f4 /* ImageResizer.swift */; };
 		7aff3306755445849a6f1f90 /* DateFormatterRelative.swift in Sources */ = {isa = PBXBuildFile; fileRef = e2895ad8cbff4ce1b2a12d61 /* DateFormatterRelative.swift */; };
 		7bc6f40bc74c43d1b87c8254 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = cff2647ccfb94231bafa696f /* AppSettings.swift */; };
 		7cda0841d38843f99bda766d /* ClipboardMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = b04b2f76bc834c5fa0365038 /* ClipboardMonitor.swift */; };
@@ -27,12 +26,10 @@
 		a8ea96c0f2254a8088b82165 /* ClipboardCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4cf4e17d86d644d380e354eb /* ClipboardCardView.swift */; };
 		a9d6868ca65f4ff8a5cbb1b0 /* PrivacySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598a20f6b00a41f98876bdcc /* PrivacySettingsView.swift */; };
 		aa63ac6100c3466e98e74b54 /* SettingsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = b4fa681d4d994d959fc3b55b /* SettingsWindow.swift */; };
-		b715113e1c7d4833a89bd14e /* TextCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = aa0203c0ec1f4678b262642c /* TextCardView.swift */; };
 		bd1f825655e1422d93de53d1 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = bb1238f9cdd84593a0296237 /* DatabaseManager.swift */; };
 		d45f791c875d4367b9f50ddc /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114d4d3b82e34e52a95266a5 /* AppDelegate.swift */; };
 		d86646bc1f754912afc73db3 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3246fd5f1e384478b4918f11 /* SearchBarView.swift */; };
 		df1d33e9c7db4980941020ec /* ShortcutSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40d501cb0dfa4152b841833a /* ShortcutSettingsView.swift */; };
-		f14fd0a0fbf94a8ebe3025cb /* ImageCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86b87c5a8a1547f99fdae50f /* ImageCardView.swift */; };
 		F00100000000000000000002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F00100000000000000000001 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -51,12 +48,9 @@
 		72377be3a6d044e5ad457ef3 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		782df130c04b4757aff23c44 /* HistoryPopover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPopover.swift; sourceTree = "<group>"; };
 		7da19251fb1a41468c0d76ca /* MenuBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarController.swift; sourceTree = "<group>"; };
-		86b87c5a8a1547f99fdae50f /* ImageCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCardView.swift; sourceTree = "<group>"; };
-		aa0203c0ec1f4678b262642c /* TextCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCardView.swift; sourceTree = "<group>"; };
 		ac81393261024f639b92e5ce /* AppIconProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconProvider.swift; sourceTree = "<group>"; };
 		b04b2f76bc834c5fa0365038 /* ClipboardMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardMonitor.swift; sourceTree = "<group>"; };
 		b4fa681d4d994d959fc3b55b /* SettingsWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWindow.swift; sourceTree = "<group>"; };
-		b6afa00c473b4729b61a65f4 /* ImageResizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResizer.swift; sourceTree = "<group>"; };
 		bb1238f9cdd84593a0296237 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		ccf5023b72104457976c3c5a /* ClipboardEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardEntry.swift; sourceTree = "<group>"; };
 		cff2647ccfb94231bafa696f /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
@@ -174,7 +168,6 @@
 				3325271E3007DAF6009A4E9D /* ColorAdaptive.swift */,
 				ac81393261024f639b92e5ce /* AppIconProvider.swift */,
 				e2895ad8cbff4ce1b2a12d61 /* DateFormatterRelative.swift */,
-				b6afa00c473b4729b61a65f4 /* ImageResizer.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -191,8 +184,6 @@
 			isa = PBXGroup;
 			children = (
 				4cf4e17d86d644d380e354eb /* ClipboardCardView.swift */,
-				86b87c5a8a1547f99fdae50f /* ImageCardView.swift */,
-				aa0203c0ec1f4678b262642c /* TextCardView.swift */,
 			);
 			path = Views/Cards;
 			sourceTree = "<group>";
@@ -270,10 +261,7 @@
 				546c4bafb815454abacc294f /* PrivacyManager.swift in Sources */,
 				6c000685a2844c679d33d7a0 /* AppIconProvider.swift in Sources */,
 				7aff3306755445849a6f1f90 /* DateFormatterRelative.swift in Sources */,
-				7660edc9656f41c084c31309 /* ImageResizer.swift in Sources */,
 				a8ea96c0f2254a8088b82165 /* ClipboardCardView.swift in Sources */,
-				f14fd0a0fbf94a8ebe3025cb /* ImageCardView.swift in Sources */,
-				b715113e1c7d4833a89bd14e /* TextCardView.swift in Sources */,
 				31e77475501243b1934079ed /* HistoryPopover.swift in Sources */,
 				5e309ce5eafe45d99b1cc5ea /* MenuBarController.swift in Sources */,
 				d86646bc1f754912afc73db3 /* SearchBarView.swift in Sources */,

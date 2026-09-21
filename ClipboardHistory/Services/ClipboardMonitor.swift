@@ -138,11 +138,6 @@ final class ClipboardMonitor {
                 try imageData.write(to: URL(fileURLWithPath: imagePath))
             }
 
-            // 生成缩略图
-            if let image = NSImage(data: imageData) {
-                ImageResizer.saveThumbnail(image, forUUID: uuid)
-            }
-
             let uniqueImgId = "\(Int(Date().timeIntervalSince1970 * 1_000_000))-\(arc4random())"
             var entry = ClipboardEntry(
                 id: uniqueImgId,

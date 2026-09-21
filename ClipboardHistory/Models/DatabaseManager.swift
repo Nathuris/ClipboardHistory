@@ -27,9 +27,6 @@ final class DatabaseManager {
         let imagesDir = dbDir.appendingPathComponent("Images")
         try FileManager.default.createDirectory(at: imagesDir, withIntermediateDirectories: true)
 
-        let thumbnailsDir = dbDir.appendingPathComponent("Thumbnails")
-        try FileManager.default.createDirectory(at: thumbnailsDir, withIntermediateDirectories: true)
-
         let dbPath = dbDir.appendingPathComponent("clipboard.db").path
 
         if sqlite3_open(dbPath, &db) != SQLITE_OK {
