@@ -262,7 +262,8 @@
 - ✅ `.app` 可独立运行（已打包出 `ClipboardHistory.dmg`）
 
 **说明**：
-- 11.1 已完成：`AppIcon.appiconset` 内含 16～1024px 全套图标 + `AppIcon.icns`；菜单栏用 SF Symbol `clipboard`
+- 11.1 已完成：`AppIcon.appiconset` 内含 16/32/128/256/512px 各 @1x 与 @2x 共 10 个图标；菜单栏用 SF Symbol `clipboard`
+  - 2026-09-21 清理：移除未被登记的多余文件 `AppIcon-1024.png`（与 `icon_512x512@2x.png` 逐字节重复）与 `AppIcon.icns`（老式格式，图标集合不使用），消除了编译警告「The app icon set "AppIcon" has an unassigned child」
 - 11.2 / 11.3 未做：没有辅助功能权限引导，也没有首次启动引导
 - 11.4 未做：列表用 `LazyVStack` 已有基础懒加载，但无分页/上限，记录多时可能卡顿
 - ✅ **缩略图白做工问题已修复（2026-09-21）**：原 `ImageResizer` 会为每张图生成缩略图存到 `Thumbnails/` 目录，但界面从不读它，清理过期数据时也不删它，导致只进不出、无限堆积（实测用户机上已积 41 张孤儿缩略图共 6.2 MB）。现已：清空历史缩略图、移除生成逻辑、删除 `ImageResizer.swift` 及其项目引用。图片功能不受影响（卡片一直直接加载原图）。
