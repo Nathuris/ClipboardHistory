@@ -128,17 +128,25 @@ enum LaunchAtLogin {
         if nsError.domain == "SMAppServiceErrorDomain" {
             switch nsError.code {
             case 1:
-                // 实测：从非「应用程序」目录运行、重复注册等情况下会出现。
-                // 这里不把原因说死，只给出最常见的排查方向；
-                // 系统原文附在后面，便于排查时对照。
-                return "系统拒绝了这次设置。最常见的原因是软件没有放在「应用程序」文件夹里，"
-                     + "或不是从那里启动的。\n（系统原话：\(nsError.localizedDescription)）"
+                // 实测：这个码会在多种互不相同的情况下出现（未登记时注销、重复注册、
+                // 位置或权限问题等），所以不能把原因说死成某一个，
+                // 否则用户照着提示排查却查不出问题，反而更困惑。
+                return "系统拒绝了这次设置。请先确认软件是放在「应用程序」文件夹里、"
+                     + "并且不是从安装包或编译目录直接运行的；若仍然不行，"
+                     + "请把下面的技术细节反馈给开发者。"
+                     + "\n\n技术细节：\(nsError.localizedDescription)"
             default:
                 break
             }
         }
 
-        // 其余错误：给出中文说明，并保留系统原文便于排查
-        return "系统未能完成设置：\(nsError.localizedDescription)"
+        // 其余错误：先用中文说明发生了什么，系统原文另起一段作为技术细节。
+        //
+        // 为什么不能只甩英文原文：本 App 只带英文资源（Info.plist 里
+        // CFBundleDevelopmentRegion = en，也没有 zh-Hans.lproj），
+        // 所以系统的 localizedDescription 一定是英文，
+        // 直接显示给不懂技术的用户等于什么都没说；
+        // 但也不能完全丢掉——排查问题时需要它。
+        return "系统没能完成这次设置。\n\n技术细节（可提供给开发者）：\(nsError.localizedDescription)"
     }
 }

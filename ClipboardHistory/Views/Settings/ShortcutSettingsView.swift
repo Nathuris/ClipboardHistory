@@ -54,6 +54,10 @@ struct ShortcutSettingsView: View {
                 .foregroundColor(Color(hex: "#AAAAAA"))
         }
         .padding(20)
+        // 本页内容不会自己撑开（没有 Spacer、也没有 Form/List 那样的贪婪容器），
+        // 若不显式指定对齐方式，标签页会把它居中摆到窗口中部，
+        // 显得和其余三页（都贴左上角）格格不入。这里固定为左上对齐。
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .onAppear {
             currentDisplay = AppSettings.shared.shortcutDisplayString
         }
