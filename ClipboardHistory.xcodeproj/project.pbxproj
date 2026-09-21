@@ -31,6 +31,7 @@
 		d86646bc1f754912afc73db3 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3246fd5f1e384478b4918f11 /* SearchBarView.swift */; };
 		df1d33e9c7db4980941020ec /* ShortcutSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40d501cb0dfa4152b841833a /* ShortcutSettingsView.swift */; };
 		F00100000000000000000002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F00100000000000000000001 /* Assets.xcassets */; };
+		F00100000000000000000005 /* LaunchAtLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00100000000000000000004 /* LaunchAtLogin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		f3a2faf2eeed4450b2b661d0 /* ClipboardHistory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClipboardHistory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		f3fea4b32ba64aa9846310e8 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
 		F00100000000000000000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
+		F00100000000000000000004 /* LaunchAtLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtLogin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				db8c3b08facd435e83f1d87b /* CleanupScheduler.swift */,
 				b04b2f76bc834c5fa0365038 /* ClipboardMonitor.swift */,
 				24ab1cec40c44a51aa1fdd6d /* HotkeyManager.swift */,
+				F00100000000000000000004 /* LaunchAtLogin.swift */,
 				648494415f954c4e8ac4be1c /* PrivacyManager.swift */,
 			);
 			path = Services;
@@ -259,6 +262,7 @@
 				7cda0841d38843f99bda766d /* ClipboardMonitor.swift in Sources */,
 				950ee23378944cecaecc7d67 /* HotkeyManager.swift in Sources */,
 				546c4bafb815454abacc294f /* PrivacyManager.swift in Sources */,
+				F00100000000000000000005 /* LaunchAtLogin.swift in Sources */,
 				6c000685a2844c679d33d7a0 /* AppIconProvider.swift in Sources */,
 				7aff3306755445849a6f1f90 /* DateFormatterRelative.swift in Sources */,
 				a8ea96c0f2254a8088b82165 /* ClipboardCardView.swift in Sources */,

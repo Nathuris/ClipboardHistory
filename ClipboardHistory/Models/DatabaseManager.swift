@@ -171,7 +171,7 @@ final class DatabaseManager {
     // MARK: - 查询
 
     func fetchAll() throws -> [ClipboardEntry] {
-        guard let db = db else { throw DatabaseError.notInitialized }
+        guard db != nil else { throw DatabaseError.notInitialized }
         let sql = "SELECT * FROM clipboard_entries ORDER BY isPinned DESC, createdAt DESC;"
         return try query(sql)
     }

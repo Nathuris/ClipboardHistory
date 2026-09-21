@@ -41,6 +41,6 @@ struct AboutView: View {
             .buttonStyle(.plain)
             .padding(.bottom, 16)
         }
-        .frame(width: 400, height: 280)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }

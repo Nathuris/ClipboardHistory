@@ -17,7 +17,6 @@ final class AppSettings {
     private enum Keys {
         static let retentionDays = "retention_days"
         static let blacklistedBundles = "blacklisted_bundles"
-        static let launchAtLogin = "launch_at_login"
         static let shortcutKeyCode = "shortcut_keyCode"
         static let shortcutModifiers = "shortcut_modifiers"
     }
@@ -42,16 +41,6 @@ final class AppSettings {
         }
         set {
             defaults.set(newValue, forKey: Keys.blacklistedBundles)
-        }
-    }
-
-    /// 是否开机自启
-    var launchAtLogin: Bool {
-        get {
-            defaults.bool(forKey: Keys.launchAtLogin)
-        }
-        set {
-            defaults.set(newValue, forKey: Keys.launchAtLogin)
         }
     }
 
