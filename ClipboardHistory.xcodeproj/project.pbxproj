@@ -32,6 +32,8 @@
 		df1d33e9c7db4980941020ec /* ShortcutSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40d501cb0dfa4152b841833a /* ShortcutSettingsView.swift */; };
 		F00100000000000000000002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F00100000000000000000001 /* Assets.xcassets */; };
 		F00100000000000000000005 /* LaunchAtLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00100000000000000000004 /* LaunchAtLogin.swift */; };
+		F00100000000000000000007 /* AutoPaste.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00100000000000000000006 /* AutoPaste.swift */; };
+		F00100000000000000000009 /* PasteSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00100000000000000000008 /* PasteSettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		f3fea4b32ba64aa9846310e8 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
 		F00100000000000000000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
 		F00100000000000000000004 /* LaunchAtLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtLogin.swift; sourceTree = "<group>"; };
+		F00100000000000000000006 /* AutoPaste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoPaste.swift; sourceTree = "<group>"; };
+		F00100000000000000000008 /* PasteSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteSettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 		03402292446444beae6aa141 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F00100000000000000000006 /* AutoPaste.swift */,
 				db8c3b08facd435e83f1d87b /* CleanupScheduler.swift */,
 				b04b2f76bc834c5fa0365038 /* ClipboardMonitor.swift */,
 				24ab1cec40c44a51aa1fdd6d /* HotkeyManager.swift */,
@@ -114,6 +119,7 @@
 			children = (
 				422ac001a7fa4ce9b7ed168f /* AboutView.swift */,
 				f3fea4b32ba64aa9846310e8 /* GeneralSettingsView.swift */,
+				F00100000000000000000008 /* PasteSettingsView.swift */,
 				598a20f6b00a41f98876bdcc /* PrivacySettingsView.swift */,
 				b4fa681d4d994d959fc3b55b /* SettingsWindow.swift */,
 				40d501cb0dfa4152b841833a /* ShortcutSettingsView.swift */,
@@ -263,6 +269,8 @@
 				950ee23378944cecaecc7d67 /* HotkeyManager.swift in Sources */,
 				546c4bafb815454abacc294f /* PrivacyManager.swift in Sources */,
 				F00100000000000000000005 /* LaunchAtLogin.swift in Sources */,
+				F00100000000000000000007 /* AutoPaste.swift in Sources */,
+				F00100000000000000000009 /* PasteSettingsView.swift in Sources */,
 				6c000685a2844c679d33d7a0 /* AppIconProvider.swift in Sources */,
 				7aff3306755445849a6f1f90 /* DateFormatterRelative.swift in Sources */,
 				a8ea96c0f2254a8088b82165 /* ClipboardCardView.swift in Sources */,

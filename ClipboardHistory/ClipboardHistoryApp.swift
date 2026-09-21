@@ -27,6 +27,9 @@ struct ClipboardHistoryApp: App {
         CleanupScheduler.shared.start()
         ClipboardMonitor.shared.start()
         HotkeyManager.shared.register()
+
+        // 跟踪「用户刚才在哪个 App」，自动粘贴时需要把焦点切回去
+        FrontmostAppTracker.shared.start()
     }
 
     var body: some Scene {

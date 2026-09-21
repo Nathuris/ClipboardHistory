@@ -3,6 +3,9 @@ import SwiftUI
 
 extension Notification.Name {
     static let popoverDidClose = Notification.Name("popoverDidClose")
+    /// 由面板内部发出：请求把面板收起来
+    /// （自动粘贴前必须先收起面板，否则模拟的 ⌘V 会打到我们自己身上）
+    static let requestClosePopover = Notification.Name("requestClosePopover")
 }
 
 /// 菜单栏控制器 — 管理 NSStatusBar 图标和 Popover
@@ -15,6 +18,14 @@ final class MenuBarController: NSObject, NSPopoverDelegate {
         super.init()
         setupMenuBar()
         setupPopover()
+
+        // 面板内部请求收起面板时（例如自动粘贴前要让出前台）响应之
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(closePopover),
+            name: .requestClosePopover,
+            object: nil
+        )
     }
 
     // MARK: - 菜单栏图标
@@ -76,7 +87,7 @@ final class MenuBarController: NSObject, NSPopoverDelegate {
         }
     }
 
-    private func closePopover() {
+    @objc private func closePopover() {
         popover?.performClose(nil)
 
         if let monitor = eventMonitor {

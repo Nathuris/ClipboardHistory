@@ -17,6 +17,7 @@ final class AppSettings {
     private enum Keys {
         static let retentionDays = "retention_days"
         static let blacklistedBundles = "blacklisted_bundles"
+        static let autoPasteEnabled = "auto_paste_enabled"
         static let shortcutKeyCode = "shortcut_keyCode"
         static let shortcutModifiers = "shortcut_modifiers"
     }
@@ -47,6 +48,20 @@ final class AppSettings {
     /// 检查某个 Bundle ID 是否在黑名单中
     func isBlacklisted(_ bundleId: String) -> Bool {
         blacklistedBundles.contains(bundleId)
+    }
+
+    /// 是否开启「自动粘贴」：点击历史条目后，自动替用户按下 Cmd+V
+    ///
+    /// 默认**开启**。注意：`UserDefaults.bool(forKey:)` 在键不存在时返回 false，
+    /// 所以不能直接用它当默认值，必须先判断键是否存在，否则默认会变成「关」。
+    var autoPasteEnabled: Bool {
+        get {
+            if defaults.object(forKey: Keys.autoPasteEnabled) == nil { return true }
+            return defaults.bool(forKey: Keys.autoPasteEnabled)
+        }
+        set {
+            defaults.set(newValue, forKey: Keys.autoPasteEnabled)
+        }
     }
 
     // MARK: - 快捷键

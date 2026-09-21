@@ -269,7 +269,41 @@ final class HistoryViewModel: ObservableObject {
             break
         }
 
-        print("📋 已粘贴: \(entry.contentType)")
+        print("📋 已写入剪贴板: \(entry.contentType)")
+
+        performAutoPasteIfPossible()
+    }
+
+    /// 自动粘贴：收起面板 → 切回用户原本在用的 App → 替用户按下 ⌘V
+    ///
+    /// 任何一步不满足都**安静地退回手动模式**（内容已经在剪贴板里，用户自己按 ⌘V 即可），
+    /// 不对用户弹错——这条路径失败不该打断用户正在做的事。
+    private func performAutoPasteIfPossible() {
+        // 用户关掉了这个功能
+        guard AppSettings.shared.autoPasteEnabled else { return }
+
+        // 没有辅助功能权限（macOS 默认禁止软件操控键盘）
+        guard AutoPaster.hasPermission else {
+            print("📋 未获辅助功能权限，退回手动粘贴")
+            return
+        }
+
+        // 不知道用户刚才在哪个 App（例如软件刚启动、还没切换过 App）
+        guard let target = FrontmostAppTracker.shared.lastExternalApp else {
+            print("📋 未记录到目标 App，退回手动粘贴")
+            return
+        }
+
+        // 必须先收起面板，否则模拟出的 ⌘V 会打到我们自己身上
+        NotificationCenter.default.post(name: .requestClosePopover, object: nil)
+
+        target.activate()
+
+        // 留一点时间给系统完成 App 切换再发按键：
+        // 太快按键会丢，太慢用户会觉得卡。0.25 秒是较稳的折中。
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+            AutoPaster.sendPasteKeystroke()
+        }
     }
 
     /// 切换置顶状态

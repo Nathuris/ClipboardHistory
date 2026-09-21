@@ -106,14 +106,14 @@ struct GeneralSettingsView: View {
         .formStyle(.grouped)
         .padding(20)
         .onAppear {
-            refreshLaunchState()
+            refreshSystemState()
         }
         // 系统不会通知状态变化。用户很可能切到系统设置关掉它再切回来，
         // 所以每次本 App 重新被激活时都重读一次，保证界面与实际一致。
         .onReceive(
             NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)
         ) { _ in
-            refreshLaunchState()
+            refreshSystemState()
         }
         .alert(
             "无法设置开机自启",
@@ -131,7 +131,10 @@ struct GeneralSettingsView: View {
     // MARK: - 开机自启
 
     /// 从系统读取真实状态，回填界面
-    private func refreshLaunchState() {
+    ///
+    /// 系统不会通知状态变化（用户可能刚去系统设置改完再切回来），
+    /// 所以每次显示、以及每次 App 重新激活时都要重读。
+    private func refreshSystemState() {
         let current = LaunchAtLogin.state
         launchAtLogin = current.isOn
         waitingForApproval = current.isWaitingForApproval
@@ -149,7 +152,7 @@ struct GeneralSettingsView: View {
                 launchErrorMessage = failure
             }
             // 关键：回填系统真实状态，避免界面与实际不符
-            refreshLaunchState()
+            refreshSystemState()
         }
     }
 }
